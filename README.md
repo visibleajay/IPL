@@ -1,2 +1,13 @@
 # IPL
-Visualization of IPL dataset taken from Kaggle (https://www.kaggle.com/harsha547/indian-premier-league-csv-dataset/data)
+
+Through this application, we are generating the lost excitement and interest of cricket in many vipul's.
+
+This project is generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.

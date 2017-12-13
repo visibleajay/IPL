@@ -1,0 +1,10 @@
+<div class="appMargin textCenter">
+  <app-visual-plot [counter]="this.plottingService.counter"></app-visual-plot>
+  <div class="heightWidth displayInline">
+    <div class="bounce positionRelative appFont floatRight" [hidden]="this.plottingService.disableNext()">still not convinced</div>
+  </div>
+  <div>
+    <button class="floatLeft" [disabled]="this.plottingService.disablePrevious()" mat-raised-button color="primary" (click)="this.plottingService.updateCounter(-1)">Prev</button>
+    <button class="floatRight" [disabled]="this.plottingService.disableNext()" mat-raised-button color="primary" (click)="this.plottingService.updateCounter(+1)">Next</button>
+  </div>
+</div>
