@@ -65,7 +65,7 @@ export class PlottingService {
     const TOTAL_MATCHES = {
       x: ['KKR', 'RCB', 'CSK', 'KXIP', 'RR', 'DD', 'MI', 'DC', 'KTK', 'PW', 'SRH', 'RPS', 'GL'],
       y: [132,139,131,134,118,133,140,75,14,46,62,14,16],
-      name: 'Total',
+      name: 'Total Match',
       type: 'bar'
     } as Partial<ScatterData>;
     
@@ -83,9 +83,33 @@ export class PlottingService {
         type: 'bar'
     } as Partial<ScatterData>
     
-    const layout = {barmode: 'group'} as Partial<Layout>;
+    const LAYOUT = {
+      barmode: 'group',
+      title: 'Win and Loss of Each Team in IPL',
+      titlefont: {
+        family: 'sans-serif',
+        size: 13,
+        color: '#7f7f7f'
+      },
+      xaxis: {
+        title: 'Team Name',
+        titlefont: {
+          family: 'sans-serif',
+          size: 12,
+          color: '#7f7f7f'
+        }
+      },
+      yaxis: {
+        title: 'Number of Matches',
+        titlefont: {
+          family: 'sans-serif',
+          size: 12,
+          color: '#7f7f7f'
+        }
+      }
+    } as Partial<Layout>;
     
-    Plotly.newPlot('chart', [TOTAL_MATCHES, WINNING_MATCHES, LOSSING_MATCHES], layout);
+    Plotly.newPlot('chart', [TOTAL_MATCHES, WINNING_MATCHES, LOSSING_MATCHES], LAYOUT);
   }
 
   private gameResult() {   
@@ -95,7 +119,16 @@ export class PlottingService {
       type: 'pie'
     }] as any;
     
-    Plotly.newPlot('chart', RESULT_INFO);
+    const LAYOUT = {
+      title: 'Pie Chart of Total Matches',
+      titlefont: {
+        family: 'sans-serif',
+        size: 13,
+        color: '#7f7f7f'
+      }
+    };   
+
+    Plotly.newPlot('chart', RESULT_INFO, LAYOUT);
   }
 
   private tossBossPlot () {
@@ -105,7 +138,16 @@ export class PlottingService {
       type: 'pie'
     }] as any;
 
-    Plotly.newPlot('chart', TOSS_INFO);
+    const LAYOUT = {
+      title: 'Match Result for Toss Winner',
+      titlefont: {
+        family: 'sans-serif',
+        size: 13,
+        color: '#7f7f7f'
+      }
+    };
+
+    Plotly.newPlot('chart', TOSS_INFO, LAYOUT);
   }
 
   private homeGroundPlot() {
@@ -130,7 +172,31 @@ export class PlottingService {
         type: 'bar'
     } as Partial<ScatterData>
    
-    const LAYOUT = {barmode: 'group'} as Partial<Layout>;
+    const LAYOUT = {
+      barmode: 'group',
+      title: `Win and Loss of Each Team on it's Home Ground`,
+      titlefont: {
+        family: 'sans-serif',
+        size: 13,
+        color: '#7f7f7f'
+      },
+      xaxis: {
+        title: 'Team Name',
+        titlefont: {
+          family: 'sans-serif',
+          size: 12,
+          color: '#7f7f7f'
+        }
+      },
+      yaxis: {
+        title: 'Number of Matches',
+        titlefont: {
+          family: 'sans-serif',
+          size: 12,
+          color: '#7f7f7f'
+        }
+      }
+    } as Partial<Layout>;
     
     Plotly.newPlot('chart', [HOME_GROUND_MATCHES, HOME_GROUND_WIN, HOME_GROUND_LOSS], LAYOUT);
   }
@@ -142,7 +208,16 @@ export class PlottingService {
       type: 'pie'
     }] as any;
 
-    Plotly.newPlot('chart', NOT_BATSMAN_PLOT);
+    const LAYOUT = {
+      title: '% Matches with 120 runs scores',
+      titlefont: {
+        family: 'sans-serif',
+        size: 13,
+        color: '#7f7f7f'
+      }
+    };
+
+    Plotly.newPlot('chart', NOT_BATSMAN_PLOT, LAYOUT);
   }
 
   private IPLPlot() {
@@ -160,7 +235,31 @@ export class PlottingService {
       type: 'bar'
     } as Partial<ScatterData>;
     
-    const LAYOUT = {'barmode': 'group'} as Partial<Layout>
+    const LAYOUT = {
+      'barmode': 'group',
+      title: `Match Score vs Boundary Score`,
+      titlefont: {
+        family: 'sans-serif',
+        size: 13,
+        color: '#7f7f7f'
+      },
+      xaxis: {
+        title: 'Match Number',
+        titlefont: {
+          family: 'sans-serif',
+          size: 12,
+          color: '#7f7f7f'
+        }
+      },
+      yaxis: {
+        title: 'Score',
+        titlefont: {
+          family: 'sans-serif',
+          size: 12,
+          color: '#7f7f7f'
+        }
+      }
+    } as Partial<Layout>
 
     Plotly.newPlot('chart', [TOTAL_MATCH_SCORE, FOUR_SIX], LAYOUT);
   }
